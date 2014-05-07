@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Booty</string>
+    <string name="Background">BootyBackground</string>
+    <string name="Button">ImageButton</string>
+    <string name="Image">ImageView</string>
+    <string name="setBooty">Tap on the cards to bury yer Booty!</string>
+    <string name="setTraps">Tap on the cards to set yer Traps!</string>
+    <string name="switchBooty">Arr! Move yer Booty! If yer dare!</string>
+    <string name="flipCoin">Toss the ol\' land lubbin\' coin to see who goes first!</string>
+    <string name="chooseCoin">Guess heads or tails for the first turn coin toss cap\'n!</string>
+    <string name="backDialog">Are you sure you want to quit the game? (You will automatically lose the game and any progress made towards earning achievements)</string>
+    <string name="backSplashDialog">Are you sure you want to quit? (You will lose any progress made towards earning achievements)</string>
+    <string name="quitDialog">Quit</string>
+    <string name="cancelDialog">Cancel</string>
+    
+	<string-array name="playerFirst"> 
+    <item>Ahoy! Me maty! Yer get to go first!</item>
+    <item>Bless the bellows! Yer going first!</item>
+    <item>Thar she blows! Ye be plunderin\' first!</item> 
+    <item>Yer got the first turn to find some Booty!</item> 
+    <item>Blow me down! Yer be goin\' first!</item>
+	</string-array> 
+	
+	<string-array name="opponentFirst"> 
+    <item>Scallywags! Yer opponent be going first!</item> 
+    <item>Curses! Yer opponent be pillaging first!</item> 
+    <item>Arr! Yer opponent be lookin\' for booty first!</item> 
+    <item>Yer opponent be plunderin\' first!</item>
+    <item>Yer opponent be searchin\' for booty first!</item>
+	</string-array> 
+    
+    <string-array name="playerTurn"> 
+    <item>It be yer turn to dig for some Booty!</item> 
+    <item>Arr! Get diggin\' to find some treasure!</item> 
+    <item>Avast! It\'s yer turn to find some of yer opponent\'s Booty!</item> 
+    <item>Man the Deck! Best get lookin\' for Booty!</item> 
+    <item>Weigh Anchor! Get lookin\' for Booty!</item>
+	</string-array> 
+	
+	<string-array name="opponentTurn">
+    <item>Yer thievin\' opponent be lookin\' for yer Booty!</item> 
+	<item>Yer freebooter opponent be lookin\' for yer Booty!</item> 
+    <item>Arr! Yer opponent be trying to plunder yer Booty!</item> 
+    <item>Avast! Yer scurvy riddled opponent be lookin\' for Booty!</item> 
+    <item>Arr! Yer opponent is searchin\' for yer Booty!</item>
+	</string-array> 
+	
+	<string-array name="switchTurn"> 
+    <item>Matey! Decide if yer swivel gunnin\' yer Booty!</item> 
+    <item>Blimey Buccaneer! Yer can move yer Booty around!</item> 
+    <item>Bilging Blaggards! Move yer Booty if yer want to!</item> 
+    <item>Yer keelhauling cutlass, Yer can move yer Booty about!</item> 
+    <item>Belay the mast! Get movin\' yer Booty!</item> 
+	</string-array>
+	
+</resources>

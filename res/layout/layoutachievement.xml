@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TimerAchievement"
+    android:layout_width= "match_parent"
+    android:layout_height="31dp"
+    android:orientation="vertical"
+    android1:gravity="left" >
+    
+      <ImageView
+        android1:id="@+id/imageBackground"
+        android1:layout_width="match_parent"
+        android1:layout_height="30dp"
+        android1:contentDescription="@string/Image"
+        android:scaleType="fitXY"
+		android1:src="@drawable/iconachievementbackground" />
+
+      <ImageView
+          android1:id="@+id/imageAchievement"
+          android1:layout_width="30dp"
+          android1:layout_height="30dp"
+          android1:layout_alignParentTop="true"
+          android1:layout_alignParentLeft="true"
+          android1:layout_marginLeft="50dp"
+          android:scaleType="fitXY"
+          android1:contentDescription="@string/Image"/>
+
+      <TextView
+          android1:id="@+id/textAchievement"
+          android1:layout_width="200dp"
+          android1:layout_height="30dp"
+          android1:layout_alignParentTop="true"
+          android1:layout_marginLeft="14dp"
+          android1:layout_toRightOf="@+id/imageAchievement"
+          android1:gravity="center"
+          android1:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>

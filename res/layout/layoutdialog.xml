@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/DialogLayout"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:orientation="vertical"
+    android:gravity="left" >
+
+    	<ImageView
+    	    android:id="@+id/imageTimerChange"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="match_parent"
+    	    android:layout_alignParentBottom="true"
+    	    android:scaleType="fitXY"
+    	    android:contentDescription="@string/Image"
+    	    android:src="@drawable/iconachievementbackground" />
+    	
+		<TextView
+            android:id="@+id/textDialogText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:ems="10"
+            android:focusable="false"
+            android:gravity="center"
+            android:scaleType="fitXY"
+            android:visibility="visible"
+            android:text="@string/backSplashDialog" />
+
+</RelativeLayout>

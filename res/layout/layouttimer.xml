@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TimerToast"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:orientation="vertical"
+    android1:gravity="left" >
+    
+  	<ImageView
+        android1:id="@+id/imageTimerUp"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:contentDescription="@string/Image"
+		android1:src="@drawable/icontimeup"
+		android1:visibility="gone"  />
+  
+	<ImageView
+        android1:id="@+id/imageTimerChange"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:contentDescription="@string/Image"
+		android1:src="@drawable/icontimerchanged"
+		android1:visibility="gone"  />
+
+  	<ImageView
+        android1:id="@+id/imageTimerBackground"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:contentDescription="@string/Image" />
+  
+	<TextView
+          android1:id="@+id/textTimer"
+          android1:layout_width="wrap_content"
+          android1:layout_height="wrap_content"
+          android1:layout_centerHorizontal="true"
+          android1:layout_centerVertical="true"
+          android1:gravity="center"
+          android1:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Screen Layout -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ChooseGameScreen"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/playGameSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/Background"
+        android:scaleType="fitXY"
+        android:src="@drawable/screenchoosegame" />
+
+    <LinearLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="fill_vertical"
+        android:orientation="vertical"
+        android:paddingTop="39dp" >
+
+        <ImageButton
+            android:id="@+id/buttonSinglePlayer"
+            android:layout_width="300dp"
+            android:layout_height="82dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:scaleType="fitXY"
+            android:src="@drawable/buttonsingleplayerselector"
+            android:onClick="startGameSetup_Click" />
+
+        <ImageButton
+            android:id="@+id/buttonMultiplayer"
+            android:layout_width="300dp"
+            android:layout_height="82dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:scaleType="fitXY"
+            android:src="@drawable/buttonmultiplayerselector" />
+
+        <ImageButton
+            android:id="@+id/buttonPlayerSetup"
+            android:layout_width="300dp"
+            android:layout_height="82dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:scaleType="fitXY"
+            android:src="@drawable/buttonplayersetupselector" />
+        <ImageButton
+            android:id="@+id/buttonShop"
+            android:layout_width="300dp"
+            android:layout_height="82dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:scaleType="fitXY"
+            android:src="@drawable/buttonshopselector" />
+
+    </LinearLayout>
+
+</RelativeLayout>

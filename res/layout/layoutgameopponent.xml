@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:id="@+id/BootyGameOpponentScreen"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/screenOpponent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:contentDescription="@string/Background"
+        android:scaleType="fitXY"
+        android:src="@drawable/screengameopponent" />
+
+    <RelativeLayout
+        android:id="@+id/layoutGameInformation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY" >
+
+        <TextView
+            android:textIsSelectable="false"
+            android:id="@+id/opponentTextGameInfo"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@null"
+            android:focusable="false"
+            android:gravity="center"
+            android:ems="10"
+            android:scaleType="fitXY" >
+        </TextView>
+        
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutGameOpponentGrid"
+		android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutGameInformation"
+        android:orientation="vertical"
+        android:paddingLeft="7dp"
+        android:paddingRight="11dp"
+        android:paddingTop="12dp" >
+              
+        <ImageView
+            android:id="@+id/buttonOpponentGridOne"
+            android:layout_width="98dp"
+            android:layout_height="115dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:src="@drawable/iconcard"
+            android1:scaleType="fitXY"
+            android:layout_marginLeft="1dp" 
+            android:tag="0"
+            android:onClick="playerChoose_Click"/>
+
+        <ImageView
+            android:id="@+id/buttonOpponentGridTwo"
+            android:layout_width="98dp"
+            android:layout_height="115dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:src="@drawable/iconcard"
+            android1:scaleType="fitXY"
+            android:layout_toRightOf="@+id/buttonOpponentGridOne" 
+            android:layout_marginLeft="3dp"
+            android:tag="1"
+            android:onClick="playerChoose_Click"/>
+
+        <ImageView
+            android:id="@+id/buttonOpponentGridThree"
+            android:layout_width="98dp"
+            android:layout_height="115dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:src="@drawable/iconcard"
+            android1:scaleType="fitXY" 
+            android:layout_toRightOf="@+id/buttonOpponentGridTwo" 
+            android:layout_marginLeft="3dp"
+            android:tag="2"
+            android:onClick="playerChoose_Click"/>
+
+        <ImageView
+            android:id="@+id/buttonOpponentGridFour"
+			android:layout_width="98dp"
+            android:layout_height="115dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:src="@drawable/iconcard"
+            android1:scaleType="fitXY" 
+            android:layout_below="@+id/buttonOpponentGridOne"
+            android:layout_marginTop="2dp"
+			android:layout_marginLeft="1dp" 
+			android:tag="3"
+			android:onClick="playerChoose_Click"/>
+
+        <ImageView
+            android:id="@+id/buttonOpponentGridFive"
+            android:layout_width="98dp"
+            android:layout_height="115dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:src="@drawable/iconcard"
+            android1:scaleType="fitXY" 
+            android:layout_toRightOf="@+id/buttonOpponentGridFour" 
+            android:layout_below="@+id/buttonOpponentGridTwo"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="2dp"
+            android:tag="4"
+            android:onClick="playerChoose_Click"/>
+
+        <ImageView
+            android:id="@+id/buttonOpponentGridSix"
+            android:layout_width="98dp"
+            android:layout_height="115dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:src="@drawable/iconcard"
+            android1:scaleType="fitXY" 
+			android:layout_toRightOf="@+id/buttonOpponentGridFive" 
+			android:layout_below="@+id/buttonOpponentGridThree"
+			android:layout_marginLeft="3dp"
+			android:layout_marginTop="2dp"
+			android:tag="5"
+			android:onClick="playerChoose_Click"/>
+              
+        <ImageView
+            android:id="@+id/buttonOpponentGridSeven"
+            android:layout_width="98dp"
+            android:layout_height="115dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:src="@drawable/iconcard"
+            android1:scaleType="fitXY" 
+            android:layout_below="@+id/buttonOpponentGridFour"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="1dp" 
+            android:tag="6"
+            android:onClick="playerChoose_Click"/>
+
+        <ImageView
+            android:id="@+id/buttonOpponentGridEight"
+            android:layout_width="98dp"
+            android:layout_height="115dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:src="@drawable/iconcard"
+            android1:scaleType="fitXY" 
+            android:layout_toRightOf="@+id/buttonOpponentGridSeven" 
+            android:layout_below="@+id/buttonOpponentGridFive"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="2dp"
+            android:tag="7"
+            android:onClick="playerChoose_Click"/>
+
+        <ImageView
+            android:id="@+id/buttonOpponentGridNine"
+            android:layout_width="98dp"
+            android:layout_height="115dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:src="@drawable/iconcard"
+            android1:scaleType="fitXY" 
+            android:layout_toRightOf="@+id/buttonOpponentGridEight" 
+            android:layout_below="@+id/buttonOpponentGridSix"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="2dp"
+            android:tag="8"
+            android:onClick="playerChoose_Click"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutGameIcons"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:layout_below="@+id/layoutGameOpponentGrid" >
+
+        <RelativeLayout
+            android1:id="@+id/layoutGameBooty"
+            android1:layout_width="match_parent"
+            android1:layout_height="wrap_content" >
+
+            <ImageView
+                android1:id="@+id/iconopponentthirdgamebooty"
+                android1:layout_width="wrap_content"
+                android1:layout_height="wrap_content"
+                android1:layout_alignParentRight="true"
+                android1:layout_alignParentTop="true"
+                android1:layout_marginRight="10dp"
+                android1:contentDescription="@string/Image"
+                android1:src="@drawable/iconchest" />
+
+            <ImageView
+                android1:id="@+id/iconopponentsecondgamebooty"
+                android1:layout_width="wrap_content"
+                android1:layout_height="wrap_content"
+                android1:layout_alignParentTop="true"
+                android1:layout_toLeftOf="@+id/iconopponentthirdgamebooty"
+                android1:contentDescription="@string/Image"
+                android1:src="@drawable/iconchest" />
+
+            <ImageView
+                android1:id="@+id/iconopponentfirstgamebooty"
+                android1:layout_width="wrap_content"
+                android1:layout_height="wrap_content"
+                android1:layout_alignParentTop="true"
+                android1:layout_toLeftOf="@+id/iconopponentsecondgamebooty"
+                android1:contentDescription="@string/Image"
+                android1:src="@drawable/iconchest" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android1:id="@+id/layoutGameOpponentReadyButton"
+            android1:layout_width="match_parent"
+            android1:layout_height="match_parent" >
+
+            <ImageButton
+                android1:id="@+id/buttonGameOpponentReady"
+                android1:layout_width="match_parent"
+                android1:layout_height="wrap_content"
+                android1:contentDescription="@string/Button"
+                android1:scaleType="fitXY"
+                android1:src="@drawable/buttonready"
+                android1:visibility="invisible" 
+                android1:onClick="readyButton_Click" />
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>

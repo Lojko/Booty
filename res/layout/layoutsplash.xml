@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!--Viewflipper which provides the transition between splash screen and
+	the credits screen-->
+    <ViewFlipper
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/flipperTransitional"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true">
+<!-- Screen Layout -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/SplashScreen"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical" >
+
+    <!-- Background Booty Image -->
+
+    <ImageView
+        android:id="@+id/imgSplash"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/Background"
+        android:scaleType="fitXY"
+        android:src="@drawable/screensplash" />
+
+    <!-- Content Container -->
+    
+    <LinearLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="fill_vertical"
+        android:orientation="vertical"
+        android:paddingTop="168dp" >
+
+        <!-- Play Game Button -->
+        <ImageButton
+            android:id="@+id/buttonPlayGame"
+            android:layout_width="300dp"
+            android:layout_height="82dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:scaleType="fitXY"
+            android:src="@drawable/buttonplaygameselector" 
+            android:onClick="buttonChooseGameScreenSwitch" />
+
+        <!-- How to play Button -->
+        <ImageButton
+            android:id="@+id/buttonHowToPlay"
+            android:layout_width="300dp"
+            android:layout_height="82dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:scaleType="fitXY"
+            android:src="@drawable/buttonhowtoplayselector"
+            android:onClick="howToPlay_Click" />
+        
+        <!-- Credits Button -->
+		<ImageButton
+            android:id="@+id/buttonCredits"
+			android:layout_width="300dp"
+            android:layout_height="82dp"
+            android:background="@null"
+            android:contentDescription="@string/Button"
+            android:scaleType="fitXY"
+            android:src="@drawable/buttoncreditsselector"
+            android:onClick="creditsScreenSwitch_Click" />
+
+    </LinearLayout>
+</RelativeLayout>
+</ViewFlipper>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:id="@+id/SetBootyScreen"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/screenGameSetup"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:contentDescription="@string/Background"
+        android:scaleType="fitXY"
+        android:src="@drawable/screensetupgame" />
+
+    <RelativeLayout
+        android1:id="@+id/layoutSetupInformation"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:scaleType="fitXY" >
+
+        <TextView
+            android1:id="@+id/textSetupInfo"
+            android1:layout_width="match_parent"
+            android1:layout_height="35dp"
+            android1:layout_alignParentLeft="true"
+            android1:layout_alignParentTop="true"
+            android:background="@null"
+            android:focusable="false"
+            android:gravity="center"
+            android1:ems="10"
+            android1:scaleType="fitXY"
+            android1:text="@string/setBooty" >
+
+            <requestFocus />
+        </TextView>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutSetupGameIcons"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:layout_marginTop="43dp" >
+
+        <RelativeLayout
+            android1:id="@+id/layoutSetupBooty"
+            android1:layout_width="match_parent"
+            android1:layout_height="wrap_content" >
+
+            <ImageView
+                android1:id="@+id/iconthirdsetupbooty"
+                android1:layout_width="wrap_content"
+                android1:layout_height="wrap_content"
+                android1:layout_alignParentRight="true"
+                android1:layout_alignParentTop="true"
+                android1:layout_marginRight="10dp"
+                android1:contentDescription="@string/Image"
+                android1:src="@drawable/iconchest" />
+
+            <ImageView
+                android1:id="@+id/iconsecondsetupbooty"
+                android1:layout_width="wrap_content"
+                android1:layout_height="wrap_content"
+                android1:layout_alignParentTop="true"
+                android1:layout_toLeftOf="@+id/iconthirdsetupbooty"
+                android1:contentDescription="@string/Image"
+                android1:src="@drawable/iconchest" />
+
+            <ImageView
+                android1:id="@+id/iconfirstsetupbooty"
+                android1:layout_width="wrap_content"
+                android1:layout_height="wrap_content"
+                android1:layout_alignParentTop="true"
+                android1:layout_toLeftOf="@+id/iconsecondsetupbooty"
+                android1:contentDescription="@string/Image"
+                android1:src="@drawable/iconchest" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android1:id="@+id/layoutSetupTraps"
+            android1:layout_width="match_parent"
+            android1:layout_height="wrap_content" >
+
+            <ImageView
+                android1:id="@+id/iconsecondsetuptrap"
+                android1:layout_width="wrap_content"
+                android1:layout_height="wrap_content"
+                android1:layout_alignParentRight="true"
+                android1:layout_alignParentTop="true"
+                android1:layout_marginRight="58dp"
+                android1:contentDescription="@string/Image"
+                android1:src="@drawable/icontrap" />
+
+            <ImageView
+                android1:id="@+id/iconfirstsetuptrap"
+                android1:layout_width="wrap_content"
+                android1:layout_height="wrap_content"
+                android1:layout_alignParentTop="true"
+                android1:layout_toLeftOf="@+id/iconsecondsetuptrap"
+                android1:contentDescription="@string/Image"
+                android1:src="@drawable/icontrap" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android1:id="@+id/layoutSetupReadyButton"
+            android1:layout_width="match_parent"
+            android1:layout_height="match_parent" >
+
+            <ImageButton
+                android1:id="@+id/buttonSetupReady"
+                android1:layout_width="match_parent"
+                android1:layout_height="wrap_content"
+                android1:contentDescription="@string/Button"
+                android1:onClick="readyButton_Click"
+                android1:scaleType="fitXY"
+                android1:src="@drawable/buttonready" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/LayoutSetupLinearGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutSetupGameIcons"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <LinearLayout
+            android:id="@+id/layoutSetupRowOne"
+            android:layout_width="match_parent"
+            android:layout_height="115dp" >
+
+            <ImageButton
+                android:id="@+id/buttonSetupGridOne"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:contentDescription="@string/Button"
+                android:onClick="setup_Click" />
+
+            <ImageButton
+                android:id="@+id/buttonSetupGridTwo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:contentDescription="@string/Button"
+                android:onClick="setup_Click" />
+
+            <ImageButton
+                android:id="@+id/buttonSetupGridThree"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:contentDescription="@string/Button"
+                android:onClick="setup_Click" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutSetupRowTwo"
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:layout_marginTop="2dp" >
+
+            <ImageButton
+                android:id="@+id/buttonSetupGridFour"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:contentDescription="@string/Button"
+                android:onClick="setup_Click" />
+
+            <ImageButton
+                android:id="@+id/buttonSetupGridFive"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:contentDescription="@string/Button"
+                android:onClick="setup_Click"/>
+
+            <ImageButton
+                android:id="@+id/buttonSetupGridSix"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:contentDescription="@string/Button"
+                android:onClick="setup_Click"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutSetupRowThree"
+            android:layout_width="match_parent"
+            android:layout_height="115dp" 
+            android:layout_marginTop="2dp" >
+
+            <ImageButton
+                android:id="@+id/buttonSetupGridSeven"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:contentDescription="@string/Button"
+                android:onClick="setup_Click" />
+
+            <ImageButton
+                android:id="@+id/buttonSetupGridEight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:contentDescription="@string/Button"
+                android:onClick="setup_Click"
+                android:layout_marginLeft="4dp"/>
+            
+            <ImageButton
+                android:id="@+id/buttonSetupGridNine"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:contentDescription="@string/Button"
+                android:onClick="setup_Click"
+				android:layout_marginLeft="3dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
