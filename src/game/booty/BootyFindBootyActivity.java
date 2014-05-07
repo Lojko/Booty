@@ -12,7 +12,7 @@ import android.widget.ImageView;
 /**
  * Test of Githubss commits
  * @author Michael Lojko
- */s
+ */
 public class BootyFindBootyActivity extends Activity 
 {	   
 	private int m_Selection;
