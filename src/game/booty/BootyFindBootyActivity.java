@@ -10,7 +10,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 /**
- * 
+ * Test of Githyb commits
  * @author Michael Lojko
  */
 public class BootyFindBootyActivity extends Activity 
