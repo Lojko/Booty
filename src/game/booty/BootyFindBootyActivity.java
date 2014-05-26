@@ -10,7 +10,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 /**
- * Test of Githubss commits
+ * Activity from which the result of a booty search is displayed to the user as a fade in / 
+ * scaling animation. Test
  * @author Michael Lojko
  */
 public class BootyFindBootyActivity extends Activity 
@@ -23,7 +24,7 @@ public class BootyFindBootyActivity extends Activity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        //Get what has been selected
+        //Get what has been selected from the previous activity
         m_Selection = getIntent().getExtras().getInt("Selection");
         m_Player = getIntent().getExtras().getString("Player");
         
@@ -48,9 +49,9 @@ public class BootyFindBootyActivity extends Activity
         }
         
     	ImageView imageFindBooty = (ImageView) findViewById(R.id.imagefindbooty);
-    	Animation coinchoice = AnimationUtils.loadAnimation(this, R.anim.animationrevealbooty);
-    	imageFindBooty.startAnimation(coinchoice);
-    	imageFindBooty.setImageResource(imageToUse);
+    	Animation revealAnimation = AnimationUtils.loadAnimation(this, R.anim.animationrevealbooty);
+    	imageFindBooty.startAnimation(revealAnimation);
+    	imageFindBooty.setImageResource(imageToUse);    	
     	
     	new Handler().postDelayed(new Runnable() { 
     	    public void run() { 

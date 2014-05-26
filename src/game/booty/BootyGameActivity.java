@@ -29,7 +29,7 @@ import android.view.View.OnTouchListener;
 import android.view.WindowManager.LayoutParams;
 
 /**
- * 
+ * Main game activity, other activities are executed and displayed off of this one
  * @author Michael Lojko
  */
 public class BootyGameActivity extends Activity implements OnTouchListener, Observer
