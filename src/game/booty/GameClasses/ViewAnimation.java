@@ -4,51 +4,60 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 
+/**
+ * ViewAnimation helper class which translates a given {@link Direction} into/out of
+ * the frame and direction to enter/exit and returns an appropriate {@link Animation}.	
+ * 
+ * @author Michael
+ */
 public class ViewAnimation 
 {
+	/**Enumeration which dictates direction */
+	public enum Direction {
+		TOP,
+		BOTTOM,
+		RIGHT,
+		LEFT,
+		IN,
+		OUT
+	}
+	
 	//Gesture Animation which animates transitions between views
-    public Animation GestureAnimation(String inout, String direction, int duration, int animationType) {
+    public Animation GestureAnimation(Direction inout, Direction direction, int duration, int animationType) {
     	float xFrom = 0.0f, xTo = 0.0f, yFrom = 0.0f, yTo = 0.0f;
 		
 		//Check if its bottom or top
-		if(direction.equals("BOTTOM") || direction.equals("TOP")) {
+		if (direction == Direction.BOTTOM || direction == Direction.TOP) {
 			xFrom = xTo = 0.0f;
 			
 			//Check Movement
-			if(inout.equals("IN")){
+			if (inout == Direction.IN){
 				//Assign Value
-				if(direction.equals("BOTTOM")) {
+				if (direction == Direction.BOTTOM) {
 					yFrom = +1.0f;
-				}
-				else {
+				} else {
 					yFrom = -1.0f;
 				}
-			}
-			else {
-				if(direction.equals("BOTTOM")) {
+			} else {
+				if (direction == Direction.BOTTOM) {
 					yTo = +1.0f;
-				}
-				else {
+				} else {
 					yTo = -1.0f;
 				}
 			}
-		}
-		else {
+		} else {
 			yFrom = yTo = 0.0f;
 			
-			if(inout.equals("IN")) {
-				if(direction.equals("RIGHT")) {
+			if (inout == Direction.IN) {
+				if (direction == Direction.RIGHT) {
 					xFrom = +1.0f;
-				}
-				else {
+				} else {
 					xFrom = -1.0f;
 				}
-			}
-			else {
-				if(direction.equals("RIGHT")) {
+			} else {
+				if (direction == Direction.RIGHT) {
 					xTo = +1.0f;
-				}
-				else {
+				} else {
 					xTo = -1.0f;
 				}
 			}
