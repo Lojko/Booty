@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
 /**
  * Activity from which the result of a booty search is displayed to the user as a fade in / 
- * scaling animation. Test
+ * scaling animation.
  * @author Michael Lojko
  */
 public class BootyFindBootyActivity extends Activity 

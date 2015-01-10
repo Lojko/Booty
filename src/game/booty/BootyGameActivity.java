@@ -430,6 +430,9 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
     	}
     }
     
+    /**
+     * Turn reset method which resets selections and updates the UI for a new turn
+     */
     public void TurnReset() {
 		//Set the opponent selected location, (default -1 when finished)
     	m_CurrentPlayerSelectedLocation = -1;

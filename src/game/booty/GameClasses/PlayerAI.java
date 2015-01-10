@@ -38,14 +38,11 @@ public class PlayerAI extends Observable
 		m_RandSelectionTime = m_RandomNumberGenerator.nextInt(m_RandTotalSelectionTime - 1) + 1;
 		m_RandTotalSelectionTime -= m_RandSelectionTime;
 		m_RandSelectionTime *= 1000;
-		new CountDownTimer(m_RandSelectionTime, m_RandSelectionTime)
-		{
+		new CountDownTimer(m_RandSelectionTime, m_RandSelectionTime) {
 			public void onTick(long millisUntilFinished){};
-			public void onFinish()
-			{
+			public void onFinish() {
 				ChoiceSelection(m_RandomNumberGenerator.nextInt(9));
-				if(m_RandTotalSelectionTime >= 2)
-				{
+				if(m_RandTotalSelectionTime >= 2) {
 					ChangeSelection();
 				}
 			};
