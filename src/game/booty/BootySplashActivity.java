@@ -174,8 +174,7 @@ public class BootySplashActivity extends Activity implements OnTouchListener
     {
     	m_GameAudio.PlaySplashButtonPress();
     	String achievementImage = m_Achievements.incrementAchievement("Ready to Booty!");
-    	if(achievementImage != null)
-    	{
+    	if(achievementImage != null) {
     		m_ToastTimer.displayAchievement("Ready to Booty!", getResources().getIdentifier(achievementImage, "drawable", "game.booty"));
     	}
     	
