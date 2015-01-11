@@ -25,8 +25,7 @@ public class BootySetupGameActivity extends Activity
 	private int[] m_SelectedBooty;
 	private int[] m_SelectedTraps;
 	
-	public enum SetupState
-	{
+	public enum SetupState {
 		SetBooty,
 		SetTraps
 	}
@@ -35,8 +34,7 @@ public class BootySetupGameActivity extends Activity
 	
     /** Called when the activity is first created. */
     @Override
-    public void onCreate(Bundle savedInstanceState) 
-    {
+    public void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
 
         //Set the Activity to full screen
@@ -55,18 +53,15 @@ public class BootySetupGameActivity extends Activity
     }
     
     //Credit Button function
-    public void setup_Click(View v)
-    {
-		if(((ImageButton)v).getTag() != null)
-		{
+    public void setup_Click(View v) {
+		if(((ImageButton)v).getTag() != null) {
 			return;
 		}
 		
 		int clickedButton = -1;
     	
 		//Find the button
-		for(int i = 0; i < m_ButtonArray.length; i++)
-		{
+		for(int i = 0; i < m_ButtonArray.length; i++) {
 			if(m_ButtonArray[i] == (ImageButton)v)
 			{
 				clickedButton = i;
@@ -74,10 +69,8 @@ public class BootySetupGameActivity extends Activity
 			}
 		}
 		
-    	if(m_CurrentState == SetupState.SetBooty)
-    	{
-    		if(m_SelectedBooty[m_SetBooty] > -1)
-    		{
+    	if(m_CurrentState == SetupState.SetBooty) {
+    		if(m_SelectedBooty[m_SetBooty] > -1) {
     			m_ButtonArray[m_SelectedBooty[m_SetBooty]].setImageResource(0);
     			m_ButtonArray[m_SelectedBooty[m_SetBooty]].setTag(null);
     		}
@@ -87,26 +80,21 @@ public class BootySetupGameActivity extends Activity
 			m_ButtonArray[m_SelectedBooty[m_SetBooty]].setTag("Booty");
 			m_SetBooty++;
 			
-    		if(m_SetBooty == 1)
-    		{
+    		if(m_SetBooty == 1) {
     			ImageView bootyImage = (ImageView)this.findViewById(R.id.iconfirstsetupbooty);
     			bootyImage.setImageResource(R.drawable.iconusedchest);
     		}
-    		else if(m_SetBooty == 2)
-    		{
+    		else if(m_SetBooty == 2) {
     			ImageView bootyImage = (ImageView)this.findViewById(R.id.iconsecondsetupbooty);
     			bootyImage.setImageResource(R.drawable.iconusedchest);
     		}
-    		else
-    		{
+    		else {
     			m_SetBooty = 0;
     			displayReadyButton(View.VISIBLE);
     		}
     	}
-    	else if(m_CurrentState == SetupState.SetTraps)
-    	{
-    		if(m_SelectedTraps[m_SetTraps] > -1)
-    		{
+    	else if(m_CurrentState == SetupState.SetTraps) {
+    		if(m_SelectedTraps[m_SetTraps] > -1) {
     			m_ButtonArray[m_SelectedTraps[m_SetTraps]].setImageResource(0);
     			m_ButtonArray[m_SelectedTraps[m_SetTraps]].setTag(null);
     		}
@@ -116,23 +104,19 @@ public class BootySetupGameActivity extends Activity
 			m_ButtonArray[m_SelectedTraps[m_SetTraps]].setTag("Traps");
 			m_SetTraps++;
 			
-    		if(m_SetTraps == 1)
-    		{
+    		if(m_SetTraps == 1) {
     			ImageView trapImage = (ImageView)this.findViewById(R.id.iconfirstsetuptrap);
     			trapImage.setImageResource(R.drawable.iconusedtrap);
     		}
-    		else
-    		{
+    		else {
     			m_SetTraps = 0;
     			displayReadyButton(View.VISIBLE);
     		}
     	}
     }
     
-    public void readyButton_Click(View v)
-    {
-    	if(m_CurrentState == SetupState.SetBooty)
-    	{
+    public void readyButton_Click(View v) {
+    	if(m_CurrentState == SetupState.SetBooty) {
     		m_CurrentState = SetupState.SetTraps;
     		TextView textSetupInfo = (TextView)this.findViewById(R.id.textSetupInfo);
     		textSetupInfo.setText(R.string.setTraps);
@@ -140,8 +124,7 @@ public class BootySetupGameActivity extends Activity
     		hideBooty();
             displayTraps(View.VISIBLE);
     	}
-    	else
-    	{
+    	else {
     		
     		//Start Game
         	Intent startGame = new Intent(this, BootyGameActivity.class);
@@ -158,22 +141,19 @@ public class BootySetupGameActivity extends Activity
     	}
     }
     
-    private void displayReadyButton(int visibility)
-    {
+    private void displayReadyButton(int visibility) {
     	ImageButton ready = (ImageButton)this.findViewById(R.id.buttonSetupReady);
     	ready.setVisibility(visibility);
     }
     
-    private void displayTraps(int visibility)
-    {
+    private void displayTraps(int visibility) {
     	ImageView icon = (ImageView)this.findViewById(R.id.iconfirstsetuptrap);
     	icon.setVisibility(visibility);
     	icon = (ImageView)this.findViewById(R.id.iconsecondsetuptrap);
     	icon.setVisibility(visibility);
     }
     
-    private void hideBooty()
-    {
+    private void hideBooty() {
     	ImageView icon = (ImageView)this.findViewById(R.id.iconfirstsetupbooty);
     	icon.setVisibility(View.GONE);
     	icon = (ImageView)this.findViewById(R.id.iconsecondsetupbooty);
@@ -182,8 +162,7 @@ public class BootySetupGameActivity extends Activity
     	icon.setVisibility(View.GONE);
     }
     
-    private void setupArrays()
-    {
+    private void setupArrays() {
         m_ButtonArray = new ImageButton[9];
         m_ButtonArray[0] =  (ImageButton)this.findViewById(R.id.buttonSetupGridOne);
         m_ButtonArray[1] =  (ImageButton)this.findViewById(R.id.buttonSetupGridTwo);
@@ -197,27 +176,23 @@ public class BootySetupGameActivity extends Activity
         
         m_SelectedBooty = new int[3];
         
-        for(int i = 0; i < m_SelectedBooty.length; i++)
-        {
+        for(int i = 0; i < m_SelectedBooty.length; i++) {
         	m_SelectedBooty[i] = -1;
         }
         
         m_SelectedTraps = new int[2];
         
-        for(int i = 0; i < m_SelectedTraps.length; i++)
-        {
+        for(int i = 0; i < m_SelectedTraps.length; i++) {
         	m_SelectedTraps[i] = -1;
         }
     }
     
     @Override
-    public void onBackPressed() 
-    {
+    public void onBackPressed() {
     	this.finish();
     }
     
-    public static void applyFont(final Context context, final View root, final String fontName) 
-    {
+    public static void applyFont(final Context context, final View root, final String fontName) {
         try {
         	if (root instanceof TextView)
                 ((TextView) root).setTypeface(Typeface.createFromAsset(context.getAssets(), fontName));

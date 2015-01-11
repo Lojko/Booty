@@ -7,7 +7,7 @@ import java.util.Random;
 public class Game extends Observable implements Observer
 {
 	private Random m_CoinFlip = new Random();
-	private boolean m_FirstGo, m_SwitchMade;
+	private boolean m_PlayerGoesFirst, m_SwitchMade;
 	private int m_CoinGuess, m_PlayerSelection, m_OpponentSelection, m_PlayerFoundBooty, m_OpponentFoundBooty;
 	
 	private Player m_Player, m_Opponent;
@@ -23,7 +23,7 @@ public class Game extends Observable implements Observer
 	public Game() {
 		m_PlayerFoundBooty = 0;
 		m_OpponentFoundBooty = 0;
-		m_FirstGo = false;
+		m_PlayerGoesFirst = false;
 		m_SwitchMade = false;
 		m_Player = new Player();
 		m_Opponent = new Player();
@@ -52,13 +52,11 @@ public class Game extends Observable implements Observer
 	public int getCoinFlip() {
 		int flip = m_CoinFlip.nextInt(2);
 		
-		if(flip == m_CoinGuess)
-		{
-			m_FirstGo = true;
+		if(flip == m_CoinGuess) {
+			m_PlayerGoesFirst = true;
 			m_GameState = GameState.PlayerTurn;
 		}
-		else
-		{
+		else {
 			m_GameState = GameState.OpponentTurn;
 		}
 		
@@ -67,7 +65,7 @@ public class Game extends Observable implements Observer
 	
 	//Check if player gets first go
 	public boolean getFirstGo() {
-		return this.m_FirstGo;
+		return this.m_PlayerGoesFirst;
 	}
 	
 	public boolean getSwitchMade() {
@@ -138,33 +136,33 @@ public class Game extends Observable implements Observer
 	}
 	
 	public void ChangeTurn() {
-		if(m_FirstGo) {
-			//if(switchMade)
-			//{
-				//switchMade = false;
-			//}
+		//If it is the players turn, check who went first and set the state appropriately
+		if(m_GameState == GameState.PlayerTurn) {
 			
-			if(m_GameState == GameState.PlayerTurn) {
+			if(m_PlayerGoesFirst) {
 				m_GameState = GameState.OpponentTurn;
+				return;
 			}
-			else if(m_GameState == GameState.OpponentTurn) {
-				m_GameState = GameState.Switch;
-			}
-			else {
-				m_GameState = GameState.PlayerTurn;
-			}
+			
+			m_GameState = GameState.Switch;
 		}
-		else
-		{
-			if(m_GameState == GameState.OpponentTurn) {
-				m_GameState = GameState.PlayerTurn;
-			}
-			else if(m_GameState == GameState.PlayerTurn) {
+		//If it is the opponents turn, check who went first and set the state appropriately
+		else if(m_GameState == GameState.OpponentTurn) {
+			
+			if(m_PlayerGoesFirst) {
 				m_GameState = GameState.Switch;
+				return;
 			}
-			else {
-				m_GameState = GameState.OpponentTurn;
+			
+			m_GameState = GameState.PlayerTurn;
+		} else {
+		//Switch, find out who went first and set the state accordingly
+			if(m_PlayerGoesFirst) {
+				m_GameState = GameState.PlayerTurn;
+				return;
 			}
+			
+			m_GameState = GameState.OpponentTurn;
 		}
 	}
 

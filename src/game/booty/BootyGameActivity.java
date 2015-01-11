@@ -7,6 +7,7 @@ import java.util.Random;
 import game.booty.GameClasses.Game;
 import game.booty.GameClasses.DialogTimer;
 import game.booty.GameClasses.ViewAnimation;
+import game.booty.GameClasses.ViewAnimation.Direction;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -429,6 +430,9 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
     	}
     }
     
+    /**
+     * Turn reset method which resets selections and updates the UI for a new turn
+     */
     public void TurnReset() {
 		//Set the opponent selected location, (default -1 when finished)
     	m_CurrentPlayerSelectedLocation = -1;
@@ -488,15 +492,15 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
     
     //Credit screen transition
     public void switchToOpponentScreen() {
-    	m_GameFlipper.setInAnimation(m_ViewAnimationGenerator.GestureAnimation("IN", "TOP", 500, Animation.RELATIVE_TO_PARENT));
-    	m_GameFlipper.setOutAnimation(m_ViewAnimationGenerator.GestureAnimation("OUT", "BOTTOM", 500, Animation.RELATIVE_TO_PARENT));
+    	m_GameFlipper.setInAnimation(m_ViewAnimationGenerator.GestureAnimation(Direction.IN, Direction.TOP, 500, Animation.RELATIVE_TO_PARENT));
+    	m_GameFlipper.setOutAnimation(m_ViewAnimationGenerator.GestureAnimation(Direction.OUT, Direction.BOTTOM, 500, Animation.RELATIVE_TO_PARENT));
         m_GameFlipper.setDisplayedChild(SCRNOPPONENT);	
     }
     
     //Splash screen transition
     public void switchToPlayerScreen() {
-        m_GameFlipper.setInAnimation(m_ViewAnimationGenerator.GestureAnimation("IN", "BOTTOM", 500, Animation.RELATIVE_TO_PARENT));
-        m_GameFlipper.setOutAnimation(m_ViewAnimationGenerator.GestureAnimation("OUT", "TOP", 500, Animation.RELATIVE_TO_PARENT));
+        m_GameFlipper.setInAnimation(m_ViewAnimationGenerator.GestureAnimation(Direction.IN, Direction.BOTTOM, 500, Animation.RELATIVE_TO_PARENT));
+        m_GameFlipper.setOutAnimation(m_ViewAnimationGenerator.GestureAnimation(Direction.OUT, Direction.TOP, 500, Animation.RELATIVE_TO_PARENT));
         m_GameFlipper.setDisplayedChild(SCRNPLAYER);
     }
     

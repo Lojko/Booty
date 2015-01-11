@@ -33,29 +33,25 @@ public class DatabaseHelper extends SQLiteOpenHelper
 					+ KEY_UNLOCKED + " INTEGER DEFAULT 0, "
 					+ KEY_IMAGE + " TEXT not null)";
 	
-	private DatabaseHelper(Context context)
-	{
+	private DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 	
 	public static DatabaseHelper getInstance(Context context)
 	{
-		if(instance == null)
-		{
+		if(instance == null) {
 			instance = new DatabaseHelper(context);
 		}
 		
 		return instance;
 	}
 	
-	public String getDbName()
-	{
+	public String getDbName() {
 		return DATABASE_NAME;
 	}
  
     @Override
-    public void onCreate(SQLiteDatabase db)
-    {
+    public void onCreate(SQLiteDatabase db) {
         db.execSQL(DATABASE_CREATE);
         createAchievement(db, "Ready to Booty!", "Completed the Tutorial", 1, "iconachievementtutorial");
         createAchievement(db, "Bronze Booty!", "Found 50 Booty!", 50, "iconachievementbronzebooty");

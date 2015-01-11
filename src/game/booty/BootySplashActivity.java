@@ -4,6 +4,7 @@ import game.booty.GameClasses.Achievements;
 import game.booty.GameClasses.Sound;
 import game.booty.GameClasses.DialogTimer;
 import game.booty.GameClasses.ViewAnimation;
+import game.booty.GameClasses.ViewAnimation.Direction;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -123,8 +124,8 @@ public class BootySplashActivity extends Activity implements OnTouchListener
     //Credit Button function
     public void buttonChooseGameScreenSwitch(View v)
     {
-    	m_SplashFlipper.setInAnimation(m_ViewAnimationGenerator.GestureAnimation("IN", "TOP", 500, Animation.RELATIVE_TO_PARENT));
-        m_SplashFlipper.setOutAnimation(m_ViewAnimationGenerator.GestureAnimation("OUT", "BOTTOM", 500, Animation.RELATIVE_TO_PARENT));
+    	m_SplashFlipper.setInAnimation(m_ViewAnimationGenerator.GestureAnimation(Direction.IN, Direction.TOP, 500, Animation.RELATIVE_TO_PARENT));
+        m_SplashFlipper.setOutAnimation(m_ViewAnimationGenerator.GestureAnimation(Direction.OUT, Direction.BOTTOM, 500, Animation.RELATIVE_TO_PARENT));
         m_SplashFlipper.setDisplayedChild(SCRNCHOOSEGAME);
         
         //Play sound
@@ -141,24 +142,24 @@ public class BootySplashActivity extends Activity implements OnTouchListener
     //Return to splash screen from game menu
     public void returnToSplashScreen()
     {
-        m_SplashFlipper.setInAnimation(m_ViewAnimationGenerator.GestureAnimation("IN", "BOTTOM", 500, Animation.RELATIVE_TO_PARENT));
-        m_SplashFlipper.setOutAnimation(m_ViewAnimationGenerator.GestureAnimation("OUT", "TOP", 500, Animation.RELATIVE_TO_PARENT));
+        m_SplashFlipper.setInAnimation(m_ViewAnimationGenerator.GestureAnimation(Direction.IN, Direction.BOTTOM, 500, Animation.RELATIVE_TO_PARENT));
+        m_SplashFlipper.setOutAnimation(m_ViewAnimationGenerator.GestureAnimation(Direction.OUT, Direction.TOP, 500, Animation.RELATIVE_TO_PARENT));
         m_SplashFlipper.setDisplayedChild(SCRNSPLASH);
     }
     
     //Credit screen transition
     public void switchToSplashScreen()
     {
-    	m_SplashFlipper.setInAnimation(m_ViewAnimationGenerator.GestureAnimation("IN", "TOP", 500, Animation.RELATIVE_TO_PARENT));
-    	m_SplashFlipper.setOutAnimation(m_ViewAnimationGenerator.GestureAnimation("OUT", "BOTTOM", 500, Animation.RELATIVE_TO_PARENT));
+    	m_SplashFlipper.setInAnimation(m_ViewAnimationGenerator.GestureAnimation(Direction.IN, Direction.TOP, 500, Animation.RELATIVE_TO_PARENT));
+    	m_SplashFlipper.setOutAnimation(m_ViewAnimationGenerator.GestureAnimation(Direction.OUT, Direction.BOTTOM, 500, Animation.RELATIVE_TO_PARENT));
         m_SplashFlipper.setDisplayedChild(SCRNSPLASH);	
     }
     
     //Splash screen transition
     public void switchToCreditsScreen()
     {
-        m_SplashFlipper.setInAnimation(m_ViewAnimationGenerator.GestureAnimation("IN", "BOTTOM", 500, Animation.RELATIVE_TO_PARENT));
-        m_SplashFlipper.setOutAnimation(m_ViewAnimationGenerator.GestureAnimation("OUT", "TOP", 500, Animation.RELATIVE_TO_PARENT));
+        m_SplashFlipper.setInAnimation(m_ViewAnimationGenerator.GestureAnimation(Direction.IN, Direction.BOTTOM, 500, Animation.RELATIVE_TO_PARENT));
+        m_SplashFlipper.setOutAnimation(m_ViewAnimationGenerator.GestureAnimation(Direction.OUT, Direction.TOP, 500, Animation.RELATIVE_TO_PARENT));
         m_SplashFlipper.setDisplayedChild(SCRNCREDITS);
     }
     
@@ -173,8 +174,7 @@ public class BootySplashActivity extends Activity implements OnTouchListener
     {
     	m_GameAudio.PlaySplashButtonPress();
     	String achievementImage = m_Achievements.incrementAchievement("Ready to Booty!");
-    	if(achievementImage != null)
-    	{
+    	if(achievementImage != null) {
     		m_ToastTimer.displayAchievement("Ready to Booty!", getResources().getIdentifier(achievementImage, "drawable", "game.booty"));
     	}
     	

@@ -33,6 +33,7 @@ public class Achievements
 	}
 	
 	public static Achievements getInstance(Context context) {
+
 		if(instance == null) {
 			instance = new Achievements(context);
 		}
@@ -63,9 +64,8 @@ public class Achievements
 		if (!database.exists()) {
 			return false;
 		} 
-		else {
-			return true;
-		}
+
+		return true;
 	}
 	
 	public void Close() {
@@ -83,16 +83,18 @@ public class Achievements
 		Cursor check = m_DB.rawQuery(CHECK_UNLOCK, new String[] {achievementName});
 		check.moveToFirst();
 		
-		if(check !=null && check.getCount() > 0) {
+		//if(check !=null && check.getCount() > 0) {
+		//TODO: Test Achievements remove always unlock
+		//if(check !=null && check.getCount() > 0) {
 			String imageName = check.getString(check.getColumnIndex("Image"));
 			check.close();
-			m_UnlockStatement.bindString(1, achievementName);
-			m_UnlockStatement.execute();
+			//m_UnlockStatement.bindString(1, achievementName);
+			//m_UnlockStatement.execute();
 			return imageName;
-		}
-		else {
-			check.close();
-			return null;
-		}
+		//}
+		//else {
+			//check.close();
+			//return null;
+		//}
 	}
 }
