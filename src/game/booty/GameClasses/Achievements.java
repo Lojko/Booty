@@ -28,19 +28,15 @@ public class Achievements
 			"SELECT Image FROM " + DATABASE_TABLE + 
 			" WHERE Achievement = ? AND Count < UnlockCount AND Unlocked = 0";
 	
-	private Achievements(Context ctx)
-	{
+	private Achievements(Context ctx) {
 		m_Context = ctx;
 	}
 	
-	public static Achievements getInstance(Context context)
-	{
-		if(instance == null)
-		{
+	public static Achievements getInstance(Context context) {
+		if(instance == null) {
 			instance = new Achievements(context);
 		}
-		else
-		{
+		else {
 			m_Context = context;
 		}
 		
@@ -48,8 +44,7 @@ public class Achievements
 	}
 	
 	//Achievements Constructor, Sets up Increment and Unlock statements
-	public Achievements open() throws android.database.SQLException
-	{
+	public Achievements open() throws android.database.SQLException {
 		m_DBHelper = DatabaseHelper.getInstance(m_Context);
 		m_DB = m_DBHelper.getWritableDatabase();
 		
@@ -62,48 +57,40 @@ public class Achievements
 		return this;
 	}
 	
-	public boolean CheckDatabaseExists()
-	{
+	public boolean CheckDatabaseExists() {
 		File database = m_Context.getDatabasePath(m_DBHelper.getDbName() + ".db");
 
-		if (!database.exists())
-		{
+		if (!database.exists()) {
 			return false;
 		} 
-		else 
-		{
+		else {
 			return true;
 		}
 	}
 	
-	public void Close()
-	{
+	public void Close() {
 		m_DBHelper.close();
 	}
 	
-	public String incrementAchievement(String achievementName)
-	{	
+	public String incrementAchievement(String achievementName) {	
 		m_IncrementStatement.bindString(1, achievementName);
 		m_IncrementStatement.execute();
 		
 		return checkUnlockAchievement(achievementName);
 	}
 	
-	private String checkUnlockAchievement(String achievementName)
-	{
+	private String checkUnlockAchievement(String achievementName) {
 		Cursor check = m_DB.rawQuery(CHECK_UNLOCK, new String[] {achievementName});
 		check.moveToFirst();
 		
-		if(check !=null && check.getCount() > 0)
-		{
+		if(check !=null && check.getCount() > 0) {
 			String imageName = check.getString(check.getColumnIndex("Image"));
 			check.close();
 			m_UnlockStatement.bindString(1, achievementName);
 			m_UnlockStatement.execute();
 			return imageName;
 		}
-		else
-		{
+		else {
 			check.close();
 			return null;
 		}

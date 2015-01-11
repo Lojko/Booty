@@ -8,6 +8,13 @@ import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.util.SparseIntArray;
 
+/**
+ * Class which is responsible for loading and playing the sound effect that are used
+ * througout the Booty game. The class is a singleton instance and it loads the initial
+ * sounds that are required by the main menu screen.
+ * 
+ * @author Michael Lojko
+ */
 public class Sound 
 {
 	private SoundPool m_SoundEffects;
@@ -48,6 +55,9 @@ public class Sound
 		m_SoundEffects.play(m_SoundPoolMap.get(0), 1.0f, 1.0f, 1, 0, 1.0f);
 	}
 	
+	/**
+	 * Function which loads the sounds required by the {@
+	 */
 	public void loadHowToPlaySound() {
 		
 	}

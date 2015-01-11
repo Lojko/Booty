@@ -30,8 +30,7 @@ public class DialogTimer extends Observable
 	
 	private final int ACHIEVEMENTTIMERTIME = 5000;
 	
-	public DialogTimer(LayoutInflater parentLayoutInflater, Context toastContext, Context dialogContext, View parentView, int timerTime)
-	{
+	public DialogTimer(LayoutInflater parentLayoutInflater, Context toastContext, Context dialogContext, View parentView, int timerTime) {
         m_ParentLayoutInflater = parentLayoutInflater; 
 		m_DialogContext = dialogContext;
 		m_ParentView = parentView;
@@ -58,10 +57,8 @@ public class DialogTimer extends Observable
 		dialogAchievement.getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL);
 		dialogAchievement.show();
 		
-    	new Handler().postDelayed(new Runnable() 
-    	{ 
-    		public void run() 
-    		{ 
+    	new Handler().postDelayed(new Runnable() { 
+    		public void run() { 
     			dialogAchievement.dismiss();
 	    	}
 		}, ACHIEVEMENTTIMERTIME);
