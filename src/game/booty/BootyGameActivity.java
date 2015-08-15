@@ -253,6 +253,7 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
 	
 	//Possible that method gets called twice, wait until the first call is finished
 	private synchronized void makeSwitch() {
+		
 		if(m_Game.getSwitchMade()) {
 			m_TurnTimer.switchUpdate();
 		}
@@ -265,6 +266,7 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
 	}
 	
 	public void readyButton_Click(View v) {
+		
 		if(m_Game.playerCanChoose()) {
 			m_Game.setPlayerSelection(m_CurrentPlayerSelectedLocation);
 			//Players choice to search for Booty
@@ -280,7 +282,8 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
 		}
 	}
 	
-	public void switchBooty(ImageView firstBootySwitch, ImageView secondBootySwitch) {		
+	public void switchBooty(ImageView firstBootySwitch, ImageView secondBootySwitch) {
+		
 		//Pass by reference int arrays for location of ImageViews
 		int[] firstSelectionLocation = new int[2];
 		int[] secondSelectionLocation = new int[2];
@@ -296,11 +299,14 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
 	}
 	
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		
 		int bootySearch = data.getExtras().getInt("Selection");
 		String player = data.getExtras().getString("Player");
 		
 		if(bootySearch == 2) {
+			
 			if(player.equals("Opponent")) {
+				
 				int opponentFoundBooty = m_Game.GetOpponentFoundBooty();
 				m_PlayerGridArray[m_CurrentOpponentSelectedLocation].setImageResource(R.drawable.iconcarddisabled);
 				m_PlayerGridArray[m_CurrentOpponentSelectedLocation].setOnClickListener(null);
@@ -324,6 +330,7 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
 				clearOpponentArrayButtonImages();
 			}
 			else {
+				
 				int playerFoundBooty = m_Game.GetPlayerFoundBooty();
 				m_OpponentGridArray[m_CurrentPlayerSelectedLocation].setImageResource(R.drawable.iconcarddisabled);
 				m_OpponentGridArray[m_CurrentPlayerSelectedLocation].setOnClickListener(null);
@@ -355,7 +362,9 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
 	}
 	
     public void playerChoose_Click(View v) {
+    	
     	if(m_Game.playerCanChoose()) {
+    		
     		//Add the select icon to the currently selected location
     		if(m_CurrentPlayerSelectedLocation != -1) {
     			m_OpponentGridArray[m_CurrentPlayerSelectedLocation].setImageResource(R.drawable.iconcard);
@@ -370,6 +379,7 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
     }
 	
     public void playerChooseSwitch_Click(View v) {
+    	
     	if(m_Game.playerCanSwitch()) {
     		int selectedImageView = Integer.parseInt(((ImageView)v).getTag().toString());
     		
@@ -403,6 +413,7 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
     {
     	TurnReset();
     	m_Game.ChangeTurn();
+    	
     	if(m_Game.playerCanSwitch()) {
     		//Set the text of both textfields on the game UI to a random string
     		m_OpponentTextGameInfo.setText(m_SwitchTurnText[new Random().nextInt(m_SwitchTurnText.length)]);
@@ -411,6 +422,7 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
     		startTurnTimer(SWITCHTIMERTIME);
     	}
     	else if(!m_Game.playerCanChoose()) {
+    		
     		if(m_GameFlipper.getDisplayedChild() == SCRNOPPONENT) {
     			switchToPlayerScreen();
     		}
@@ -419,8 +431,8 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
     		m_Game.makeOpponentSelection();
     		startTurnTimer(COUNTDOWNTIMERTIME);
     	}
-    	else
-    	{
+    	else {
+    		
     		if(m_GameFlipper.getDisplayedChild() == SCRNPLAYER) {
     			switchToOpponentScreen();
     		}
@@ -535,6 +547,7 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
     
     @Override
     public void onBackPressed() {
+    	
     	AlertDialog backDialog = new AlertDialog.Builder(this)
     	.setView(getLayoutInflater().inflate(R.layout.layoutdialog, (ViewGroup)findViewById(R.id.DialogLayout)))
     	.setPositiveButton(R.string.quitDialog, new DialogInterface.OnClickListener() {
@@ -554,6 +567,7 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
     }
     
     private void closeGame() {
+    	
         if(m_TurnTimer != null) {
         	m_TurnTimer.timerDispose();
         	m_Game.dispose();
@@ -561,6 +575,10 @@ public class BootyGameActivity extends Activity implements OnTouchListener, Obse
         this.finish();
     }
     
+    /**
+     * Internal flip coin class which handles the 'flipping coin animation'
+     * @author Michael
+     */
     class FlipCoin extends Handler {
 		  private short m_CoinImageValue = 0;
 		  private ImageView m_Coin;
